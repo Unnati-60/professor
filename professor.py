@@ -10,7 +10,7 @@ import random
 
 def main():
     n = get_level()
-    score = stimulate_game(n)
+    score = start_game(n)
     print("Score : ",score)
 
 # function to get level from player
@@ -37,19 +37,19 @@ def generate_integer(level):
         return random.randrange(start,stop)
 
 # function to start game , asking player 10 math problems
-def stimulate_game(z):
+def start_game(z):
     round = 0
     score = 0
     while round < 10:
         x = generate_integer(z)
         y = generate_integer(z)
-        if stimulate_round(x,y):
+        if start_round(x,y):
             score += 1
         round += 1
     return score
 
 # fuction to check players answer
-def stimulate_round(x,y):
+def start_round(x,y):
     tries = 0
     while tries < 3:
         try:
